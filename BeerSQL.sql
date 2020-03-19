@@ -27,7 +27,17 @@ AND ANNEE = 2014;
 SELECT * FROM ticket
 WHERE MONTH(DATE_VENTE) = "03" 
 OR MONTH(DATE_VENTE) = "06" 
-AND ANNEE = 2014
+AND ANNEE = 2014;
+
+#Question 8 
+SELECT Nom_ARTICLE, NOM_COULEUR FROM article
+INNER JOIN couleur ON couleur.ID_Couleur = article.ID_Couleur;
+
+#Question 9
+SELECT ID_ARTICLE, NOM_ARTICLE FROM article
+WHERE ID_Couleur = NULL;
+
+
 
 
 
