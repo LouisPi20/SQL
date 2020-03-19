@@ -1,11 +1,22 @@
 USE beer;
-
+#Question 1 
 SELECT NUMERO_TICKET FROM ventes WHERE ID_ARTICLE = 500;
 
+#Question 2
 SELECT * FROM ticket WHERE DATE_VENTE = "2014-01-15";
 
-SELECT * FROM ticket WHERE DATE_VENTE IN ("2014-01-15", "2014-01-17")
+#Question 3
+SELECT * FROM ticket WHERE DATE_VENTE IN ("2014-01-15", "2014-01-17");
 
+#Question 4
+SELECT * FROM article
+INNER JOIN ventes ON article.ID_ARTICLE = ventes.ID_ARTICLE
+WHERE QUANTITE >= 50;
 
+#Question 5 
+
+ SELECT * FROM ticket
+ WHERE DATE_VENTE BETWEEN "2014-03-01" and "2014-03-31"
+ 
 
 
