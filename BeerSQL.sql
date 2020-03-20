@@ -108,8 +108,35 @@ WHERE id_article not in (
                         FROM ventes 
                         WHERE annee = 2014);
                         
-	
-    
+#Question 21
+# 1er code
+SELECT NOM_PAYS, NOM_TYPE FROM article
+INNER JOIN type ON type.ID_TYPE = article.ID_TYPE
+INNER JOIN marque ON marque.ID_MARQUE = article.ID_MARQUE
+INNER JOIN pays ON pays.ID_PAYS = marque.ID_PAYS
+where type.NOM_TYPE like 'trappiste'
+ORDER BY NOM_TYPE;
+
+#2ème code
+SELECT NOM_PAYS AS PAYS, NOM_TYPE as TYPE FROM article
+INNER JOIN type ON type.ID_TYPE = article.ID_TYPE
+INNER JOIN marque ON marque.ID_MARQUE = article.ID_MARQUE
+INNER JOIN pays ON pays.ID_PAYS = marque.ID_PAYS
+where type.NOM_TYPE like 'trappiste'
+ORDER BY NOM_TYPE;
+
+#3ème code --> FAUX
+SELECT NOM_PAYS, NOM_TYPE FROM article
+INNER JOIN marque ON marque.ID_MARQUE = article.ID_MARQUE
+INNER JOIN pays ON pays.ID_PAYS = marque.ID_PAYS
+WHERE NOM_TYPE IN ( SELECT ID_TYPE FROM TYPE INNER JOIN type ON type.ID_TYPE = article.ID_TYPE)
+
+
+
+
+
+
+
 
 
 
