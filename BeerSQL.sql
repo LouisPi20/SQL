@@ -140,13 +140,22 @@ WHERE NUMERO_TICKET like 856 AND ventes.ANNEE like 2014);
 
 #Question 23
 SELECT NOM_ARTICLE, TITRAGE FROM article
-WHERE article.TITRAGE > (
-SELECT MAX(TITRAGE) FROM article
+WHERE article.TITRAGE > ( SELECT MAX(TITRAGE) FROM article
 INNER JOIN type ON type.ID_TYPE = article.ID_TYPE
 INNER JOIN marque ON marque.ID_MARQUE = article.ID_MARQUE
 INNER JOIN pays ON pays.ID_PAYS = marque.ID_PAYS
 where type.NOM_TYPE like 'trappiste'
 ORDER BY NOM_TYPE); 
+
+#Question 24 
+SELECT QUANTITE, NOM_COULEUR FROM ventes 
+INNER JOIN article ON article.ID_ARTICLE = ventes.ID_ARTICLE
+INNER JOIN couleur ON couleur.ID_COULEUR = article.ID_COULEUR
+GROUP BY NOM_COULEUR;
+
+
+
+
 
 
 
