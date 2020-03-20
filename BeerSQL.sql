@@ -100,6 +100,17 @@ WHERE ANNEE BETWEEN 2014 AND 2016
 GROUP BY article.id_article, annee
 ORDER BY ANNEE, ventes.ID_ARTICLE;
 
+#Question 20
+SELECT article.ID_ARTICLE, article.NOM_ARTICLE 
+FROM article 
+WHERE id_article not in (
+                        SELECT ventes.id_article 
+                        FROM ventes 
+                        WHERE annee = 2014);
+                        
+	
+    
+
 
 
 
