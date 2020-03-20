@@ -74,6 +74,23 @@ INNER JOIN continent ON continent.ID_CONTINENT = pays.ID_CONTINENT
 INNER JOIN article ON article.ID_MARQUE = marque.ID_MARQUE
 WHERE continent.NOM_CONTINENT like 'Afrique';
 
+#Question 16
+SELECT ticket.ANNEE, ticket.NUMERO_TICKET, SUM(PRIX_ACHAT*1.15) as PRIX_VENTE FROM ticket
+INNER JOIN ventes ON ventes.ANNEE = ticket.ANNEE AND ticket.NUMERO_TICKET = ventes.NUMERO_TICKET
+INNER JOIN article ON article.ID_ARTICLE = ventes.ID_ARTICLE
+GROUP BY NUMERO_TICKET;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
