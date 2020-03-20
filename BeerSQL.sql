@@ -62,10 +62,19 @@ where type.NOM_TYPE like 'trappiste'
 ORDER BY NOM_TYPE LIMIT 50000;
 
 #Question 14
-SELECT NOM_MARQUE FROM marque
+SELECT NOM_MARQUE, NOM_CONTINENT FROM marque
 INNER JOIN pays ON pays.ID_PAYS = marque.ID_PAYS
 INNER JOIN continent ON continent.ID_CONTINENT = pays.ID_CONTINENT
-WHERE continent.NOM_CONTINENT like 'Afrique'
+WHERE continent.NOM_CONTINENT like 'Afrique';
+
+#Question 15
+SELECT NOM_ARTICLE, NOM_MARQUE, NOM_CONTINENT FROM marque
+INNER JOIN pays ON pays.ID_PAYS = marque.ID_PAYS
+INNER JOIN continent ON continent.ID_CONTINENT = pays.ID_CONTINENT
+INNER JOIN article ON article.ID_MARQUE = marque.ID_MARQUE
+WHERE continent.NOM_CONTINENT like 'Afrique';
+
+
 
 
 
