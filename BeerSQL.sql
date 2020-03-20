@@ -80,6 +80,10 @@ INNER JOIN ventes ON ventes.ANNEE = ticket.ANNEE AND ticket.NUMERO_TICKET = vent
 INNER JOIN article ON article.ID_ARTICLE = ventes.ID_ARTICLE
 GROUP BY NUMERO_TICKET;
 
+#Question 17
+SELECT ventes.ANNEE, ROUND(SUM((PRIX_ACHAT*1.15)*QUANTITE),2) as CA FROM ventes
+INNER JOIN article ON article.ID_ARTICLE = ventes.ID_ARTICLE
+GROUP BY ANNEE;
 
 
 
@@ -91,27 +95,5 @@ GROUP BY NUMERO_TICKET;
 
 
 
-
-
-
-
- 
- 
-
-
-
-
-
- 
- 
- 
-
-
-
-
-
-
- 
- 
 
 
